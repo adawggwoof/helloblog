@@ -32,7 +32,7 @@ order: 1
                 <li class="previous">
                     <a href="{{ paginator.previous_page_path | prepend: site.url | replace: '//', '/' }}">&larr; Newer Posts</a>
                 </li>
-                {% end if %}
+                {% endif %}
 
                 {% if paginator.next_page %}
                 <li class="next">
