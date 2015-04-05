@@ -3,6 +3,7 @@ layout: default
 title: Homepage
 description: "A Clean Blog Powered by the Awesome Jekyll"
 coverImg: "home-bg.jpg"
+group: "navigation"
 order: 1
 ---
 
@@ -10,9 +11,9 @@ order: 1
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            {% for post in paginator.posts %}
+            {% for post in site.posts %}
                 <div class="post-preview">
-                    <a href="{{ post.url | prepend: site.url }}">
+                    <a href="{{ post.url }}">
                         <h2 class="post-title">
                             {{ post.title }}
                         </h2>
@@ -26,21 +27,11 @@ order: 1
             {% endfor %}
             
                 <!-- Pager -->
-                {% if paginator.total_pages > 1 %}
             <ul class="pager">
-            {% if paginator.previous_page %}
-                <li class="previous">
-                    <a href="{{ paginator.previous_page_path | prepend: site.url | replace: '//', '/' }}">&larr; Newer Posts</a>
-                </li>
-                {% endif %}
-
-                {% if paginator.next_page %}
                 <li class="next">
-                    <a href="{{ paginator.next_page_path | prepend: site.url | replace: '//', '/'  }}">Older Posts &rarr;</a>
+                    <a href="#">Older Posts &rarr;</a>
                 </li>
-                {% end if %}
             </ul>
-            {% endif %}
         </div>
      </div>
  </div>

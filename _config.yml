@@ -1,5 +1,1 @@
 markdown: redcarpet
-
-paginate: 10
-gems:
- - jekyll-sitemap
