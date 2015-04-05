@@ -2,12 +2,17 @@
 <html lang="en">
 
 <head>
-
+    <link rel="canonical" href="{{page.url | prepend: site.url}}"
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="{{page.description}}">
+    {% if page.author %}
+    <meta name="author" content="{{page.author}}">
+    {% endif %}
+    {% if page.coverImg %}
+    <meta property="og:image" content="{{page.coverImg | prepend: site.url }}" />
+    {% endif %}
 
     <title>{{ page.title }}</title>
 
@@ -52,6 +57,9 @@
                         {% else %}
                         <span class="subheading">{{page.description}}</span>
                         {% endif %}
+
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-via="adawggwoof">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                        
                     </div>
                 </div>
             </div>
